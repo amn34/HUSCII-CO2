@@ -2,29 +2,127 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HUSCII CO2</title>
-    <link rel="stylesheet" href="style.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HUSCII CO2</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 </head>
 
-<body class="bg-dark">
-    <div class="container mt-5">
-        <div class="jumbotron bg-light">
-            <h4 class="text-left">Determine Carbon Emissions by City...</h4>
-            <form action="#">
-                <input type="text" placeholder="Enter City Name...">
-                <input type="submit" value="Submit">
-            </form>
+<body style="background-color: #24272b;">
+  <ul class="nav justify-content-center">
+    <li class="nav-item">
+      <a class="nav-link active" href="index.html">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="graph.html">Graphs</a>
+    </li>
+  </ul>
+
+  <div class="container mt-5 p-5 bg-light">
+    <h4 class="text-left">US Emissions by Economic Sector</h4>
+    <div class="row">
+      <div class="col-4">
+        <div class="list-group" id="list-tab" role="tablist">
+          <a class="list-group-item list-group-item-action active" id="list-Transportation-list" data-toggle="list"
+            href="#list-Transportation" role="tab" aria-controls="Transportation">Transportation</a>
+          <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list"
+            href="#list-Electricity" role="tab" aria-controls="Electricity">Electricity</a>
+          <a class="list-group-item list-group-item-action" id="list-Industry-list" data-toggle="list"
+            href="#list-Industry" role="tab" aria-controls="Industry">Industry</a>
+          <a class="list-group-item list-group-item-action" id="list-Agriculture-list" data-toggle="list"
+            href="#list-Agriculture" role="tab" aria-controls="Agriculture">Agriculture</a>
+          <a class="list-group-item list-group-item-action" id="list-Commercial-list" data-toggle="list"
+            href="#list-Commercial" role="tab" aria-controls="Commercial">Commercial / Residential</a>
         </div>
+      </div>
+      
+      <div class="col-8">
+        
+        <div class="tab-content" id="nav-tabContent">
+
+          <div class="tab-pane fade show active" id="list-Transportation" role="tabpanel"
+            aria-labelledby="list-Transportation-list">
+            <p>
+              Polluters: vehicles, aircraft, trains, ships <br>
+              Large scale solutions: Improved transportation infrastructure, promote energy efficient vehicles, more
+              shared vehicles <br>
+              Small scale solutions: Utilize public transport more often, hybrid vehicles
+            </p>
+            <div class="row">
+              <div class="col-7">
+                <canvas id="canvas1" style="display: block; width: 832px; height: 416px;" width="400" height="416"
+                class="chartjs-render-monitor"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="list-Electricity" role="tabpanel" aria-labelledby="list-Electricity-list">
+            <p>
+              Polluters: burning fossil fuels (mostly coal and natural gas)
+            </p>
+            <div class="row">
+              <div class="col-7">
+                <canvas id="canvas2" style="display: block; width: 832px; height: 416px;" width="400" height="416"
+                class="chartjs-render-monitor"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="list-Industry" role="tabpanel" aria-labelledby="list-Industry-list">
+            <p>
+              Polluters: burning fossil fuels, producing goods from raw materials
+            </p>
+            <div class="row">
+              <div class="col-7">
+                <canvas id="canvas3" style="display: block; width: 832px; height: 416px;" width="400" height="416"
+                class="chartjs-render-monitor"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="list-Agriculture" role="tabpanel" aria-labelledby="list-Agriculture-list">
+            <p>
+              Polluters: Livestock, Agricultural soils, Rice production
+            </p>
+            <div class="row">
+              <div class="col-7">
+                <canvas id="canvas4" style="display: block; width: 832px; height: 416px;" width="400" height="416"
+                class="chartjs-render-monitor"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="list-Commercial" role="tabpanel" aria-labelledby="list-Commercial-list">
+            <p>
+              Polluters: use of products which contain greenhouse gases, handling of waste
+            </p>
+            <div class="row">
+              <div class="col-7">
+                <canvas id="canvas5" style="display: block; width: 832px; height: 416px;" width="400" height="416"
+                class="chartjs-render-monitor"></canvas>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
     </div>
+  </div>
 
-
-    <!-- CSS only -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-
+  <!-- JS, Popper.js, and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+  <script src="../scripts/index.js"></script>
 </body>
 
 </html>
