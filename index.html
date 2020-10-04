@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HUSCII CO2</title>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.7.0"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body style="background-color: #24272b;">
+  <ul class="nav justify-content-center">
+    <li class="nav-item">
+      <a class="nav-link active" href="index.html">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="graph.html">Graphs</a>
+    </li>
+  </ul>
+
+  <div id="content" class="container mt-5 p-5 justify-content-center">
+    <h4 class="text-center mb-4">US Emissions by Economic Sector</h4>
+
+    <div class="list-group list-group-horizontal text-center" id="list-tab" role="tablist">
+      <a class="list-group-item list-group-item-action active" id="list-general-list" data-toggle="list"
+        href="#list-general" role="tab" aria-controls="General">General</a>
+      <a class="list-group-item list-group-item-action" id="list-Transportation-list" data-toggle="list"
+        href="#list-Transportation" role="tab" aria-controls="Transportation">Transportation</a>
+      <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list"
+        href="#list-Electricity" role="tab" aria-controls="Electricity">Electricity</a>
+      <a class="list-group-item list-group-item-action" id="list-Industry-list" data-toggle="list" href="#list-Industry"
+        role="tab" aria-controls="Industry">Industry</a>
+      <a class="list-group-item list-group-item-action" id="list-Agriculture-list" data-toggle="list"
+        href="#list-Agriculture" role="tab" aria-controls="Agriculture">Agriculture</a>
+      <a class="list-group-item list-group-item-action" id="list-Commercial-list" data-toggle="list"
+        href="#list-Commercial" role="tab" aria-controls="Commercial">Commercial / Residential</a>
+    </div>
+
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="list-general" role="tabpanel" aria-labelledby="list-general-list">
+        <div class="row mt-4">
+          <div class="col-5">
+            <p>
+              CO2 affects the atmosphere, ocean, temperature, climate, and personal health.
+            </p>
+
+            <!-- Temps of ocean waters -->
+            <div class="chart-wrapper">
+              <ul class="chart-labels">
+                <li>2019 +0.98°C </li>
+                <li>2018 +0.95°C </li>
+                <li>2017 +0.91°C </li>
+                <li>2016 +0.87°C </li>
+                <li>2015 +0.83°C </li>
+              </ul>
+
+              <ul class="chart-x">
+                <li data-year="2015">2015</li>
+                <li data-year="2016">2016</li>
+                <li data-year="2017">2017</li>
+                <li data-year="2018">2018</li>
+                <li data-year="2019">2019</li>
+              </ul>
+
+              <ul class="chart-y">
+                <li>0.98</li>
+                <li>0.95</li>
+                <li>0.91</li>
+                <li>0.87</li>
+                <li>0.83</li>
+                <li>0.79</li>
+              </ul>
+
+            </div>
+
+          </div>
+          <div class="col-7">
+            <canvas id="canvas6" style="display: block; width: 832px; height: 416px;" width="400" height="416"
+              class="chartjs-render-monitor"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="list-Transportation" role="tabpanel" aria-labelledby="list-Transportation-list">
+        <div class="row mt-4">
+          <div class="col-5">
+            <ul class="list-group">
+              <li class="list-group-item">
+                <h3><u>Polluters</u></h3>
+                <p>🚗Personal Vehicles </p>
+                <p>✈Aircraft</p>
+                <p>🚆🚌Public Transportation</p>
+                <p>🚢Ships</p>
+                <p>🚚Deliveries</p>
+              </li>
+              <li class="list-group-item">
+
+                <h3><u>Large-Scale Solutions</u></h3>
+                <p>🚇Improved public transportation infrastructure</p>
+                <p>🔋Incentivize energy efficient vehicles</p>
+              </li>
+              <li class="list-group-item">
+                <h3><u>Local Solutions</u></h3>
+                <a href="https://humantransit.org/2012/09/the-photo-that-explains-almost-everything.html">Ⓜ️Utilize
+                  public
+                  transport more often</a>
+                <a href="https://afdc.energy.gov/fuels/electricity_benefits.html">⚡Consider Hybrid/Electric
+                  vehicles</a><br>
+                <a
+                  href="https://www.ourstreetsmpls.org/does_bike_commuting_affect_your_carbon_footprint_and_how_much#:~:text=If%20you%20take%20a%20bus,release%20any%20more%20carbon%20emissions.">🚲🚶Biking
+                  and Walking</a>
+              </li>
+            </ul>
+
+          </div>
+          <div class="col-7">
+            <canvas id="canvas1" style="display: block; width: 832px; height: 416px;" width="400" height="416"
+              class="chartjs-render-monitor"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="list-Electricity" role="tabpanel" aria-labelledby="list-Electricity-list">
+        <div class="row mt-4">
+          <div class="col-5">
+            <ul class="list-group">
+              <li class="list-group-item">
+                <h3><u>Polluters</u></h3>
+                <p>🔥Burning fossil fuels (mostly coal and natural gas)</p>
+              </li>
+              <li class="list-group-item">
+                <h3><u>Large Scale Solutions</u></h3>
+                <p>🌩️Produce energy from more renewable resources</p>
+                <p>🔋Research ways to efficiently store energy</p>
+              </li>
+              <li class="list-group-item">
+                <h3><u>Local Solutions</u></h3>
+                <a
+                  href="https://www.energy.gov/energysaver/save-electricity-and-fuel/lighting-choices-save-you-money/when-turn-your-lights#:~:text=The%20amount%20of%20electricity%20consumed,turning%20them%20back%20on%20again.">
+                  <p>🎛️Reduce unused electricity usage (lights, appliances)</p>
+                </a>
+                <a href="#">💡Purchase energy efficient homeware</a>
+              </li>
+          </div>
+
+          <div class="col-7">
+            <canvas id="canvas2" style="display: block; width: 832px; height: 416px;" width="400" height="416"
+              class="chartjs-render-monitor"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="list-Industry" role="tabpanel" aria-labelledby="list-Industry-list">
+        <div class="row mt-4">
+          <div class="col-5">
+            <ul class="list-group">
+              <li class="list-group-item">
+                <h3><u>Polluters</u></h3>
+                <p>🔥Burning fossil fuels (mostly coal and natural gas)</p>
+                <p>🥫Producing goods from raw materials</p>
+              </li>
+              <li class="list-group-item">
+                <h3><u>Large Scale Solutions</u></h3>
+                <p>💰Impose Carbon Taxes</p>
+                <p>🖊️Find ways to reduce emissions while operating</p>
+                <p>🕰️Find ways to shorten the time of operation</p>
+                <p>🔨Create composite materials</p>
+              </li>
+              <li class="list-group-item">
+                <h3><u>Local Solutions</u></h3>
+                <a href="https://www.nhs.uk/live-well/eat-well/what-are-processed-foods/">
+                  <p>💓Eat less processed foods</p>
+                </a>
+                <a href="https://www.wm.com/us/en/recycle-right/recycling-101">♻️Recycle</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-7">
+            <canvas id="canvas3" style="display: block; width: 832px; height: 416px;" width="400" height="416"
+              class="chartjs-render-monitor"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="list-Agriculture" role="tabpanel" aria-labelledby="list-Agriculture-list">
+        <div class="row mt-4">
+          <div class="col-5">
+            <ul class="list-group">
+              <li class="list-group-item">
+                <h3><u>Polluters</u></h3>
+                <p>🐮Livestock</p>
+                <p>🌱Agricultural soils</p>
+                <p>🍚Rice Production</p>
+              </li>
+              <li class="list-group-item">
+                <h3><u>Large Scale Solutions</u></h3>
+                <p>🐄Reduce cattle production</p>
+                <p>Stop planting in 💩</p>
+              </li>
+              <li class="list-group-item">
+                <h3><u>Local Solutions</u></h3>
+
+                <a
+                  href="https://www.unenvironment.org/news-and-stories/press-release/new-consortium-reduce-environmental-footprint-rice-production">
+                  <p>🍙Reduce rice consumption</p>
+                </a>
+                <a
+                  href="https://www.trifectanutrition.com/blog/foods-carbon-footprint-9-ways-to-reduce-greenhouse-emissions">🥩Substitute
+                  beef with other meats</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-7">
+            <canvas id="canvas4" style="display: block; width: 832px; height: 416px;" width="400" height="416"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="list-Commercial" role="tabpanel" aria-labelledby="list-Commercial-list">
+        <div class="row mt-4">
+          <div class="col-5">
+            <ul class="list-group">
+              <li class="list-group-item">
+                <h3><u>Polluters</u></h3>
+                <p>🏘️Use of products which contain greenhouse gases</p>
+                <p>💩Handling of waste</p>
+              </li>
+              <li class="list-group-item">
+                <h3><u>Large Scale Solutions</u></h3>
+                <p>🚽More effectively deal with waste disposal</p>
+                <p>🍏Look for ways to develop the same product with reduced greenhouse gases</p>
+              </li>
+              <li class="list-group-item">
+                <h3><u>Local Solutions</u></h3>
+                <a
+                  href="https://www.nature.org/en-us/about-us/where-we-work/united-states/delaware/stories-in-delaware/delaware-eight-ways-to-reduce-waste/">🚮Find
+                  ways to reduce trash each week</a>
+                <a href="https://www.epa.gov/recycle/composting-home">♻️Dispose of food in yard waste</a>
+              </li>
+            </ul>
+
+          </div>
+          <div class="col-7">
+            <canvas id="canvas5" style="display: block; width: 832px; height: 416px;" width="400" height="416"
+              class="chartjs-render-monitor"></canvas>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"></script>
+    <script src="./scripts/index.js"></script>
+</body>
+
+</html>

@@ -189,6 +189,17 @@
 
 
   /* CUSTOM CSS */
-  .container p {
-    font-size: 1.7rem;
+  .container p, .container a {
+    font-size: 1.3rem;
   }
+
+body {
+  /* background-image: url("https://www.gannett-cdn.com/presto/2020/03/05/USAT/f5baa8a5-875e-44c7-a057-5c0ac64525e1-Eagle_Creek_Fire-GettyImages-853911824.jpg"); */
+  background-image: url("https://www.trip.me/old-wp-content/2013/11/Green-waterfalls.gif");
+  background-size: cover;
+  height: 100vh;
+}
+
+#content {
+  background-color: rgba(255, 255, 255, 0.8);
+}
