@@ -26,5 +26,14 @@ Darryl  James
 Tiarnan Marsten
 Xiuxang Wu
 
+## Sources
+https://cfpub.epa.gov/ghgdata/inventoryexplorer/#allsectors/allgas/econsect/all
+
+https://data.giss.nasa.gov/gistemp/graphs/graph_data/Global_Mean_Estimates_based_on_Land_and_Ocean_Data/graph.txt
+
+## Tools
+VScode live share extension
+Graph JS
+BootStrap
 
 ### Thank you for your time
