@@ -1,3 +1,7 @@
+//Chart.plugins.unregister(ChartDataLabels);
+
+
+
 var YEARS = [];
 for (let i = 1990; i <= 2018; i++) {
     YEARS.push(i);
@@ -20,18 +24,11 @@ const allData = [
     [33.3211856043, 39.123870575, 37.315649754700004, 39.085447397399996, 41.4794401209, 40.4238289966, 40.2438462082, 41.83578293269999, 42.2322693044, 50.0070131161, 45.737878565799996, 53.148819845000006, 51.8971583724, 57.9298361643, 59.5576767056, 58.0431333437, 58.904336522099996, 51.9811536652, 49.5182604467, 47.2406433592, 46.562267098, 46.0235756366, 48.458468462599996, 48.0735915892, 46.6298764111, 46.6360938062, 46.6311843868, 46.62404960440001, 46.6265043141],
 ]
 
-TransportationPercentage = [0.237233363, 0.23236574, 0.237733079, 0.239134914, 0.244124969, 0.246244943, 0.247117486, 0.248976665, 0.253239481, 0.261503065, 0.26132344, 0.262361684, 0.266577979, 0.263840624, 0.265271226, 0.266975306, 0.269306876, 0.265469448, 0.259580911, 0.265472462, 0.257972194, 0.259310068, 0.26599584, 0.259456968, 0.262354184, 0.269644089, 0.281358671, 0.285487648, 0.281961421]
-ElectricityPercentage = [0.29137698, 0.293668016, 0.291137155, 0.297471886, 0.29722287, 0.295948617, 0.297782263, 0.304891474, 0.3150101, 0.314866842, 0.322890623, 0.322017903, 0.322344525, 0.324849878, 0.323758617, 0.332251889, 0.328025989, 0.332504125, 0.334556092, 0.325150135, 0.331172431, 0.323994392, 0.314698349, 0.30857086, 0.305918205, 0.291960036, 0.284608068, 0.274095439, 0.269435303]
-IndustryPercentage = [0.253017995, 0.251369947, 0.252014521, 0.242907829, 0.243519726, 0.243214598, 0.240150717, 0.237923237, 0.232349247, 0.223503157, 0.217688213, 0.213662473, 0.210328086, 0.206045689, 0.209248571, 0.203152947, 0.209766349, 0.205505698, 0.203399141, 0.194149257, 0.201069919, 0.206410935, 0.212885763, 0.214778582, 0.210685949, 0.214151401, 0.212871042, 0.217551734,	0.220281597]
-AgriculturePercentage = [0.093050677, 0.092524477, 0.091136166, 0.093775281, 0.090615845, 0.09129176, 0.089623889, 0.087294379, 0.087672835, 0.08582027, 0.081976203, 0.086050193, 0.085938634, 0.085495148, 0.085726373, 0.084896948, 0.085625854, 0.08677302, 0.087634741, 0.093853278, 0.091971008, 0.091384022, 0.092223941, 0.095304438, 0.095905426, 0.098255329, 0.098248441, 0.099006718, 0.098635781]
-CommercialPercentage = [0.120144477, 0.123933067, 0.122220569, 0.120785156, 0.118312415, 0.117329953, 0.119555426, 0.114962196, 0.105761431, 0.107288737, 0.109834871, 0.108497638, 0.107617283, 0.11178397, 0.107926891, 0.104870511, 0.099221718, 0.102738814, 0.107961241, 0.114380301, 0.111145176, 0.112152786, 0.106832354, 0.114787707, 0.118308039, 0.1190039, 0.115766228, 0.116672524, 0.12270238]
-
 // Average emissions per sector
-average = [0.259220509, 0.309385485, 0.220813942, 0.090610727, 0.113189578, 0.00678]
-//sector = ["Transportation", "Electricity", "Industry", "Agriculture", "Commercial/Residential", "other"]
+average = [28.1961421, 26.9435303, 22.02821597, 9.8635781, 12.270238, 0.6983518]
+sectors = ["Transportation", "Electricity", "Industry", "Agriculture", "Commercial/Residential", "Other"]
+colors = ['rgb(255, 54, 54)', 'rgb(84, 124, 255)', 'rgb(147, 84, 255)', 'rgb(69, 255, 81)', 'rgb(255, 155, 61)', 'rgb(255,255,0)']
 
-sectors = ["Transportation", "Electricity", "Industry", "Agriculture", "Commercial/Residential"]
-colors = ['rgb(255, 54, 54)', 'rgb(84, 124, 255)', 'rgb(147, 84, 255)', 'rgb(69, 255, 81)', 'rgb(255, 155, 61)']
 
 function getDataSet(i) {
     return {
@@ -45,6 +42,18 @@ function getDataSet(i) {
     }
 }
 
+function getPieDataSet() {
+    return {
+        datasets: [{
+            data: average,
+            fill: false,
+            backgroundColor: colors
+        }],
+        labels: sectors
+    }
+}
+
+
 // Gas Emissions Config
 function getConfig(dataSet) {
     return {
@@ -55,6 +64,7 @@ function getConfig(dataSet) {
                 display: true,
                 text: 'CO2 Emissions by Sectors in US (1990 - 2018)'
             },
+
             scales: {
                 xAxes: [{
                     stacked: true,
@@ -71,18 +81,77 @@ function getConfig(dataSet) {
                     }
 
                 }]
+            },
+            plugins: {
+                datalabels: {
+                    labels: {
+                        title: null
+                    }
+                }
             }
         }
     }
 }
 
+function pieChartConfig() {
+    return {
+        type: 'pie',
+        data: getPieDataSet(),
+        options: {
+            title: {
+                display: true,
+                text: '% of total emissions in 2018'
+            },
+            plugins: {
+                // Change options for ALL labels of THIS CHART
+                datalabels: {
+                    formatter: function(value, context) {
+                        return Math.round(value) + '%';
+                    }
+                },
+    
+            }
+        },
+        tooltips: {
+            enabled: false
+        }
+    }
+}
+
+function formatPercentage(num) {
+    return Math.round(num).toFixed(2) + "%";
+}
+
+
 window.onload = function () {
     //change to config2 -> config to change to line chart
     Chart.defaults.global.defaultFontColor = "rgb(0,0,0)";
+
+    var ctx = document.getElementById('canvas6').getContext('2d');
+    window.myLine = new Chart(ctx, pieChartConfig());
+
     for (let i = 0; i < 5; i++) {
         var ctx = document.getElementById(`canvas${i + 1}`).getContext('2d');
         var dataSet = getDataSet(i);
         window.myLine = new Chart(ctx, getConfig(dataSet))
     }
-
 };
+
+// target the rectangle fabricating the clipPath element
+const clip = document.querySelector('svg #clip rect');
+// define a random amount of milliseconds for the animation
+const duration = Math.floor(Math.random() * 5 + 2) * 1000;
+
+// describe the values assumed by the rectangle
+// translated vertically from its original position to 0 and then back slightly to hide more content
+const translate = [
+  {
+    value: 'translate(0 20)',
+  },
+  {
+    value: 'translate(0 0)',
+  },
+  {
+    value: 'translate(0 7)',
+  },
+];
