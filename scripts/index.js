@@ -137,21 +137,6 @@ window.onload = function () {
     }
 };
 
-// target the rectangle fabricating the clipPath element
-const clip = document.querySelector('svg #clip rect');
-// define a random amount of milliseconds for the animation
-const duration = Math.floor(Math.random() * 5 + 2) * 1000;
-
-// describe the values assumed by the rectangle
-// translated vertically from its original position to 0 and then back slightly to hide more content
-const translate = [
-  {
-    value: 'translate(0 20)',
-  },
-  {
-    value: 'translate(0 0)',
-  },
-  {
-    value: 'translate(0 7)',
-  },
-];
+window.addEventListener("load", () => {
+    document.body.classList.add("loaded"); 
+   });

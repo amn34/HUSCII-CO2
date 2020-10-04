@@ -5,11 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HUSCII CO2</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-  integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.7.0"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+  integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
 
 <body style="background-color: #24272b;">
@@ -46,6 +47,35 @@
             <p>
               CO2 affect environment, atmosphere, ocean, temperature, climate, and body.
             </p>
+
+            <!-- Temps of ocean waters -->
+            <div class="chart-wrapper">
+              <ul class="chart-y">
+                <li>0.98</li>
+                <li>0.95</li>
+                <li>0.91</li>
+                <li>0.87</li>
+                <li>0.83</li>
+                <li>0.79</li>
+              </ul>
+              
+              <ul class="chart-x">
+                <li data-year="2015">2015</li>
+                <li data-year="2016">2016</li>
+                <li data-year="2017">2017</li>
+                <li data-year="2018">2018</li>
+                <li data-year="2019">2019</li>
+              </ul>
+
+              <ul class="chart-labels">
+                <li>2019 +0.98C</li>
+                <li>2018 +0.95C</li>
+                <li>2017 +0.91C</li>
+                <li>2016 +0.87C</li>
+                <li>2015 +0.83C</li>
+              </ul>
+            </div>
+
           </div>
           <div class="col-8">
             <canvas id="canvas6" style="display: block; width: 832px; height: 416px;" width="400" height="416"
@@ -56,12 +86,22 @@
       <div class="tab-pane fade" id="list-Transportation" role="tabpanel" aria-labelledby="list-Transportation-list">
         <div class="row">
           <div class="col-4">
-            <p>
-              Polluters: vehicles, aircraft, trains, ships <br>
-              Large scale solutions: Improved transportation infrastructure, promote energy efficient vehicles, more
-              shared vehicles <br>
-              Small scale solutions: Utilize public transport more often, hybrid vehicles
-            </p>
+            <div class="container">
+              <h3><u>Polluters</u></h3>     
+              <p>🚗Vehicles ✈Aircraft 🚆Trains 🚢Ships</p>         
+            </div>
+
+            <h3>Large-Scale Solutions</h3>
+            <ul> 
+              <li>Improved public transportation infrastructure</li>
+              <li>Incentivize energy efficient vehicles</li>
+            </ul>
+            <h3>Local Solutions</h3>
+            <ul>
+              <li>Utilize public transport more often</li>
+              <li>Hybrid/Electric vehicles</li>
+              
+            </ul>
           </div>
           <div class="col-7">
             <canvas id="canvas1" style="display: block; width: 832px; height: 416px;" width="400" height="416"

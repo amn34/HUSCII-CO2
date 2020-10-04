@@ -1,0 +1,194 @@
+/* RESET RULES & HELPER CLASSES
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  :root {
+    --chart-bg-color: rgba(211, 211, 211, 0.3);
+    --chart-line-color: black;
+    --chart-x-color: firebrick;
+    --line-color1: black;
+    --line-color2: black;
+    --line-color3: black;
+    --line-color4: black;
+    --line-color5: black;
+    --black: #2d2929;
+    --white: white;
+    --transition-delay: 0.6s;
+    --transition-delay-step: 0.6s;
+  }
+  
+  .btn-wrapper {
+    margin-top: 30px;
+    text-align: center;
+  }
+  
+  .btn {
+    display: inline-block;
+    font-size: 1.5rem;
+    color: var(--white);
+    background: var(--black);
+    padding: 0.5em 1em;
+  }
+  
+  .btn:hover {
+    background: #404040;
+  }
+  
+  .chart-wrapper {
+    display: grid;
+    justify-content: center;
+    grid-column-gap: 4rem;
+    grid-template-columns: auto auto auto;
+    margin-top: 30px;
+  }
+  
+  
+  /* CHART-Y
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  .chart-wrapper .chart-y {
+    display: grid;
+    grid-row-gap: 3rem;
+  }
+  
+  
+  /* CHART-X
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  .chart-wrapper .chart-x {
+    position: relative;
+    width: 50px;
+    border-radius: 25px;
+    border: 8px solid var(--chart-line-color);
+    background: var(--chart-bg-color);
+    overflow: hidden;
+  }
+  
+  .chart-wrapper .chart-x li {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0;
+    color: transparent;
+    border-bottom-left-radius: inherit;
+    border-bottom-right-radius: inherit;
+    background: var(--chart-x-color);
+    transition: height 0.5s ease-out;
+  }
+  
+  .chart-wrapper .chart-x li::before {
+    content: attr(data-year);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    border-top: 4px solid;
+    width: 20px;
+    opacity: 0;
+    padding-left: 3px;
+    color: var(--black);
+    font-size: 0.75rem;
+    transition: opacity 0.5s ease-out;
+  }
+  
+  .chart-wrapper .chart-x li:nth-child(1)::before {
+    border-color: var(--line-color1);
+    transition-delay: calc(
+      var(--transition-delay) + var(--transition-delay-step)
+    );
+  }
+  
+  .chart-wrapper .chart-x li:nth-child(2)::before {
+    border-color: var(--line-color2);
+    transition-delay: calc(
+      var(--transition-delay) + var(--transition-delay-step) * 2
+    );
+  }
+  
+  .chart-wrapper .chart-x li:nth-child(3)::before {
+    border-color: var(--line-color3);
+    transition-delay: calc(
+      var(--transition-delay) + var(--transition-delay-step) * 3
+    );
+  }
+  
+  .chart-wrapper .chart-x li:nth-child(4)::before {
+    border-color: var(--line-color4);
+    transition-delay: calc(
+      var(--transition-delay) + var(--transition-delay-step) * 4
+    );
+  }
+  
+  .chart-wrapper .chart-x li:nth-child(5)::before {
+    border-color: var(--line-color5);
+    transition-delay: calc(
+      var(--transition-delay) + var(--transition-delay-step) * 5
+    );
+  }
+  
+  
+  /* CHART LABELS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  .chart-wrapper .chart-labels {
+    opacity: 0;
+    transition: opacity 0.6s 3.8s;
+  }
+
+  
+  /* LOADED
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  .loaded .chart-wrapper .chart-x li::before,
+  .loaded .chart-wrapper .chart-labels {
+    opacity: 1;
+  }
+  
+  .loaded .chart-wrapper .chart-x li:nth-child(1) {
+    height: 15%;
+    transition-delay: var(--transition-delay);
+  }
+  
+  .loaded .chart-wrapper .chart-x li:nth-child(2) {
+    height: 35%;
+    transition-delay: calc(
+      var(--transition-delay) + var(--transition-delay-step)
+    );
+  }
+  
+  .loaded .chart-wrapper .chart-x li:nth-child(3) {
+    height: 50%;
+    transition-delay: calc(
+      var(--transition-delay) + var(--transition-delay-step) * 2
+    );
+  }
+  
+  .loaded .chart-wrapper .chart-x li:nth-child(4) {
+    height: 72%;
+    transition-delay: calc(
+      var(--transition-delay) + var(--transition-delay-step) * 3
+    );
+  }
+  
+  .loaded .chart-wrapper .chart-x li:nth-child(5) {
+    height: 95%;
+    transition-delay: calc(
+      var(--transition-delay) + var(--transition-delay-step) * 4
+    );
+  }
+  
+  /* FOOTER
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  footer {
+    font-family: "Cheddar Gothic Sans";
+    letter-spacing: 0.03em;
+    font-size: 1rem;
+    text-align: right;
+    margin: 30px 10px 10px 0;
+  }
+  
+  footer span {
+    color: #e31b23;
+  }
+
+
+  /* CUSTOM CSS */
+  .container p {
+    font-size: 1.7rem;
+  }
