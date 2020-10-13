@@ -1,6 +1,6 @@
 # HUSCII-CO2
 Image here / Logo here
-#### Check out the project here: https://www.youtube.com/watch?v=dQw4w9WgXcQ
+#### Check out the project here: https://amn34.github.io/HUSCII-CO2/
 
 ## Whacky description with an intricate backstory to boost our views, and secure that first impression.
 Update this section as the challenge progresses. 
